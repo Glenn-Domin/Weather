@@ -6,11 +6,13 @@ export default class SearchBar extends Component {
 
     this.state = { term: '' };
 
+    // "this", doesn't mean the search bar, until we bind it
     this.onInputChange = this.onInputChange.bind(this);
   }
 
   onInputChange(event) {
     console.log(event.target.value);
+    // "this" works, thanks to the bind above
     this.setState({ term: event.target.value });
   }
 
